@@ -1,0 +1,9 @@
+{
+  "name": "tz-library",
+  "version": "0.0.1",
+  "description": "tz'library",
+  "main": "index.js",
+  "repository": "https://github.com/tckxjzc/tz-library.git",
+  "author": "tckxjzc <tckxjzc@outlook.com>",
+  "license": "MIT"
+}

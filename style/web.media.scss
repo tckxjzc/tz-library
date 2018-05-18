@@ -1,0 +1,18 @@
+html{
+  font-size: 16px;
+}
+@media(min-width: 1280px){
+  html{
+    font-size:20px;
+  }
+}
+@media(min-width: 1440px){
+  html{
+    font-size:22.5px;
+  }
+}
+@media(min-width: 1920px){
+  html{
+    font-size:30px;
+  }
+}

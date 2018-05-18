@@ -1,0 +1,23 @@
+@mixin text-ellipsis{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin text-clamp($line){
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+}
+@mixin color-hover($color){
+  color: $color;
+  transition: color 0.3s;
+  &:hover{
+    color: darken($color,5%);
+  }
+  &:active{
+    color: darken($color,10%);
+  }
+}

@@ -1,0 +1,84 @@
+@import "tools";
+/**
+ * common
+ *
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+ul,
+ol,
+div,
+table,
+tr,
+td,
+form,
+body {
+	padding: 0;
+	margin: 0;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+	margin: 0;
+	outline: 0;
+}
+html,
+body{
+	height:100%;
+}
+button {
+	border: none;
+    -webkit-appearance: none;
+}
+a,
+a:link {
+	color: rgba(44, 47, 64, 1);
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+img {
+	vertical-align: middle;
+}
+li {
+	list-style: none;
+}
+div {
+	-webkit-tap-highlight-color: transparent;
+}
+li,
+ul,
+ol,
+p,
+textarea,
+div{
+	box-sizing: border-box;
+}
+body {
+	background-color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	-webkit-font-smoothing:antialiased;
+}
+
+
+
+
+
+/**
+ *禁用滚动 
+ */
+.tz-scroll,
+.tz-scroll>body {
+	overflow: hidden;
+	height: 100%;
+}

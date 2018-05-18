@@ -1,0 +1,46 @@
+/**
+ * media
+ */
+
+@media (min-width:320px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width:360px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media (min-width:375px) {
+  html {
+    font-size: 18.75px;
+  }
+}
+@media (min-width:392px) {
+  html {
+    font-size: 19.6px;
+  }
+}
+@media (min-width:412px) {
+  html {
+    font-size: 20.6px;
+  }
+}
+
+@media (min-width:414px) {
+  html {
+    font-size: 20.7px;
+  }
+}
+
+@media (min-width:768px) {
+  html {
+    font-size: 24px;
+  }
+  body {
+    font-size: 14px;
+  }
+
+}
