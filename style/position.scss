@@ -1,7 +1,19 @@
 
-
+/**
+old
+ */
 @mixin align-center{
   position: relative;
   margin-left: auto;
   margin-right: auto;
 }
+
+/**
+new
+ */
+@mixin ps_center{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+

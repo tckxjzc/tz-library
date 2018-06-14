@@ -2,13 +2,53 @@
 px <=>  rem
  */
 //移动端
-@function toRem($x){
+@function toRem($x) {
   @return $x*320/750/16*1rem;
 }
-@function toPx($x){
-  @return $x*320/750/16*16px;
-}
 
-@function toRemW($x){
+/**
+old
+ */
+@function toRemW($x) {
   @return $x*1024/1920/16*1rem;
 }
+
+/**
+1024
+ */
+@function toRWA($x) {
+  @return $x*1024/1920/16*1rem;
+}
+
+
+
+//
+///**
+//1280
+// */
+//@function toRWB($x) {
+//  @return $x*1200/1920/16*1rem;
+//}
+
+///**
+//1440
+// */
+//@function toRWC($x) {
+//  @return $x*1440/1920/22.5*1rem;
+//}
+//
+///**
+//1600
+// */
+//
+//@function toRWD($x) {
+//  @return $x*1600/1920/16*1rem;
+//}
+//
+///**
+//1920
+// */
+//
+//@function toRWE($x) {
+//  @return $x*1920/1920/16*1rem;
+//}

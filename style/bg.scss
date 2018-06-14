@@ -1,0 +1,28 @@
+/**
+old
+ */
+@mixin bg-hover($bg){
+  background-color: $bg;
+  transition: background-color 0.3s;
+  &:hover{
+    background-color: darken($bg,5%);
+  }
+  &:active{
+    background-color: darken($bg,10%);
+  }
+}
+
+/**
+new
+ */
+
+@mixin bg_hover($bg){
+  background-color: $bg;
+  transition: background-color 0.3s;
+  &:hover{
+    background-color: darken($bg,5%);
+  }
+  &:active{
+    background-color: darken($bg,10%);
+  }
+}

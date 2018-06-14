@@ -1,18 +1,27 @@
-html{
+html {
   font-size: 16px;
 }
-@media(min-width: 1280px){
-  html{
-    font-size:20px;
-  }
+
+$screen_width: (
+        1140,
+        1200,
+        1280,
+        1360,
+        1440,
+        1536,
+        1600,
+        1920
+);
+
+@for $i from 1 through length($screen_width) {
+        $item:nth($screen_width,$i);
+        @media(min-width: #{$item}px) {
+          html {
+            font-size: $item/1024*16px;
+          }
+        }
 }
-@media(min-width: 1440px){
-  html{
-    font-size:22.5px;
-  }
-}
-@media(min-width: 1920px){
-  html{
-    font-size:30px;
-  }
+
+@function media($base){
+
 }
