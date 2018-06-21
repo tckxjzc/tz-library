@@ -1,6 +1,6 @@
-
-$color: rgba(229, 197, 32, 0.9);
-$shadowColor: rgba(255, 235, 169, 0.9);
+$bgColor: #F7BB0F;
+$color: #fff;//rgba(226, 20, 23, 0.9);
+$shadowColor: rgba(255, 30, 28, 0.9);
 
 @keyframes spin-pulse {
   from {
@@ -39,7 +39,7 @@ $shadowColor: rgba(255, 235, 169, 0.9);
   align-items: center;
   justify-content: center;
   height: 100%;
-  background-color: #676767;
+  background-color: $bgColor;
 }
 .load {
   margin: 0 auto;
