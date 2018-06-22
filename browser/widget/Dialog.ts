@@ -1,80 +1,37 @@
-/**
- * 弹出框
- */
-class Dialog {
-    static STYLE_NORMAL = null;
-    static STYLE_FOOTER = 'footer';
+import DialogInterface from "./DialogInterface";
+import LayerUiDialog from "./LayerUiDialog";
 
-    private options: LayerOptions = {
-        content: ''
-    };
+let Proxy:any=LayerUiDialog;
 
-    /**
-     * 设置内容
-     * @param {string} content
-     * @returns {this}
-     */
-    setContent(content: string) {
-        this.options.content = content;
-        return this;
+class Dialog implements DialogInterface{
+    private  dialog:DialogInterface;
+    constructor(){
+        this.dialog=new Proxy();
+    }
+    setContent(content: string): DialogInterface {
+        return this.dialog.setContent(content);
     }
 
-    /**
-     * 设置样式
-     * @param style
-     * @returns {this}
-     */
-    setStyle(style) {
-        this.options.skin = style;
-        return this;
+    setNegativeButton(content: string, callback?: Function): DialogInterface {
+        return this.dialog.setNegativeButton(content,callback);
     }
 
-    /**
-     *
-     * @param {string} content
-     * @param {Function} callback
-     * @returns {this}
-     */
-    setPositiveButton(content: string, callback?: Function) {
-        this.options.btn = this.options.btn || [];
-        this.options.btn[0] = content;
-        if (callback) {
-            this.options.yes = (index: number) => {
-                callback();
-                layer.close(index)
-            };
-        }
-        return this;
-
+    setPositiveButton(content: string, callback?: Function): DialogInterface {
+        return this.dialog.setPositiveButton(content,callback);
     }
 
-    /**
-     *
-     * @param {string} content
-     * @param {Function} callback
-     * @returns {this}
-     */
-    setNegativeButton(content: string, callback?: Function) {
-        if (!this.options.btn) {
-            throw  new Error('need setPositiveButton!');
-        }
-        this.options.btn[1] = content;
-        if (callback) {
-            this.options.no = (index: number) => {
-                callback();
-                layer.close(index)
-            };
-        }
-        return this;
+    setStyle(style): DialogInterface {
+        return this.dialog.setStyle(style);
     }
 
-    /**
-     * 显示
-     */
-    show() {
-        layer.open(this.options)
+    show(): void {
+        this.dialog.show();
     }
+
+    static register(SubDialog){
+        Proxy=SubDialog;
+    }
+
 }
-
 
 export default Dialog;

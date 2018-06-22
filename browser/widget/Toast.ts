@@ -1,30 +1,29 @@
+import LayerUiToast from "./LayerUiToast";
+
+let Proxy: any = LayerUiToast;
+
 class Toast {
-    static LONG = 2;
-    static SHORT = 1;
+    toast;
 
     static makeText(msg: string) {
         return new Toast(msg);
     }
 
-    private option: LayerOptions = {
-        content: '',
-        skin: 'msg',
-        time: Toast.LONG
-    };
-
     private constructor(msg: string) {
-        this.option.content = msg;
+        this.toast = new Proxy(msg);
     }
 
     setTime(time: number) {
-        this.option.time = time;
-        return this;
+        return this.toast.setTime(time);
     }
 
     show() {
-        layer.open(this.option);
+        this.toast.show();
     }
 
+    static register(SubToast) {
+        Proxy = SubToast;
+    }
 }
 
 
