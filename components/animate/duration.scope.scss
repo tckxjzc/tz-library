@@ -1,0 +1,16 @@
+$durations: (
+        500,
+        1000,
+        1500,
+        2000,
+        2500,
+        3000,
+        5000
+);
+
+@for $i from 1 through length($durations){
+        $item:nth($durations,$i);
+        .duration_#{$item}{
+                animation-duration:$item+ms;
+        }
+}
