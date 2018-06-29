@@ -32,7 +32,7 @@ class NumFormat {
      * @type {string}
      * @private
      */
-    private _separator:string='.';
+    private _separator:string=',';
     /**
      * 精度
      * @type {number}
@@ -55,12 +55,14 @@ class NumFormat {
      */
     format(num:number|string|null){
 
-        let value:number=0;
+        let value;
         if(num==null){
             return '';
         }
         if(typeof num=='string'){
             value=parseFloat(num);
+        }else{
+            value=num;
         }
         if(isNaN(value)){
             return '';
@@ -75,15 +77,22 @@ class NumFormat {
         }
         //分割
         value=Math.floor(value);
-        let arr=[];
-        //取余数 、 取模数
-        let redundant=Math.pow(10,this._units);
-        do{
-            arr.push(value%redundant);
-            value=Math.floor(value/redundant)
-        } while(value>0);
+        value=value+'';
 
-        return arr.reverse().join(this.separator)+decimal;
+
+        const len = value.length;
+        if (len <= this.units) {
+            return num+ decimal;
+        }
+        const arr = [];
+        const remainder = len % this.units;
+        const round = len / this.units;
+        remainder && arr.push(value.substr(0, remainder));
+
+        for (let i = 0; i <= round - 1; i++) {
+            arr.push(value.substr(remainder + this.units * i, this.units));
+        }
+        return arr.join(this.separator) + decimal;
     }
 }
 
