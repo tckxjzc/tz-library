@@ -1,4 +1,4 @@
-import styles from './fade.scope.scss';
+import styles from './fade.scss';
 
 
 export default {

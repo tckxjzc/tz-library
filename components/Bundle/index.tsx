@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import Loading from './Loading';
+import Loading from '../Loading/index';
 
 type Props = {
     el: Function
 };
 
-class Bundle extends Component<Props> {
+class Index extends Component<Props> {
     state = {
         Element: null
     };
@@ -43,11 +43,9 @@ class Bundle extends Component<Props> {
 
     render() {
         let {Element} = this.state;
-        return <div>
-            {Element ? <Element/> : <Loading/>}
-        </div>
+        return Element ? <Element/> : <Loading/>
     }
 }
 
 
-export default Bundle;
+export default Index;

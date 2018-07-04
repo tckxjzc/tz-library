@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './loading.scope.scss';
+import styles from './index.scss';
 
 class Loading extends Component {
     constructor(props) {

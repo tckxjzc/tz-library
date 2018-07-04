@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Transition from "react-transition-group/Transition";
-import fade from './animate/fade';
-import duration,{D1000} from './animate/duration';
+import fade from '../animate/fade';
+import duration,{D1000} from '../animate/duration';
 
 type Props = {
     show: boolean,
@@ -9,7 +9,6 @@ type Props = {
     onExited?,
     [name:string]:any
 };
-let a=<div onClick={()=>{}}/>;
 
 class Fade extends Component<Props> {
     /**

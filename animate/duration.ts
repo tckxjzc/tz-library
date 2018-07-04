@@ -1,4 +1,4 @@
-import styles from './duration.scope.scss';
+import styles from './duration.scss';
 export let D5000=5000;
 export let D3000=3000;
 export let D2500=2500;
